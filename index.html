@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Fontawesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="style.css">
+	<title>Free Fire Account</title>
+</head>
+<body class="d-flex justify-content-center align-items-center">
+	
+	<div class="container">
+		<div class="img-box">
+			<img src="img/kelly.png" alt="Kelly">
+		</div>
+		<div class="profile">
+			<h1 class="name">WAH.ID</h1>
+			<h3 class="type">Rusher</h3>
+			<div class="info">
+				<div class="info-box">
+					<span>Guild</span>
+					<p>INDOARMY</p>
+				</div>
+				<div class="info-box">
+					<span>Region</span>
+					<p>INDONESIA</p>
+				</div>
+			</div>
+			<div class="id-player">
+				<span class="id">12345678</span>
+				<button>
+					<i class="fas fa-copy"></i>
+					<span class="tooltip">Copied</span>
+				</button>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	<script>
+		const wrapperText = document.querySelector('.id-player span.id');
+		const copyIcon = document.querySelector('.id-player button');
+		const tooltip = document.querySelector('.id-player button .tooltip');
+
+		copyIcon.addEventListener('click', function () {
+			const el = document.createElement('textarea');
+			el.value = wrapperText.innerText;
+			document.body.appendChild(el);
+			el.select();
+			document.execCommand('copy');
+  			document.body.removeChild(el);
+  			tooltip.classList.add('active');
+  			setTimeout(()=>{
+  				tooltip.classList.remove('active');
+  			}, 1000);
+		});
+	</script>
+
+</body>
+</html>
